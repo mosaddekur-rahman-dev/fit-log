@@ -60,22 +60,22 @@ function Navbar() {
                 Workouts
               </li>
             </Link>
-            <Link href="/workouts">
+            <Link href="/myplans">
               <li className="font-semibold p-2">MyPlan</li>
             </Link>
           </ul>
         </div>
         <div className="navbar-end flex gap-5">
-          <Link href="#" className="cursor-pointer">
-            <button className="text-[#D1D5DB]">
+          <Link href="/myplans">
+            <button className="text-[#D1D5DB] cursor-pointer">
               Plan{" "}
               <span className="px-2 py-0.5 bg-[#C2F800] rounded-full text-black font-semibold items-center">
                 0
               </span>
             </button>
           </Link>
-          <Link href="#" className="cursor-pointer">
-            <button className="text-[#9CA3AF]">
+          <Link href="/myplans">
+            <button className="text-[#9CA3AF] cursor-pointer">
               Saved{" "}
               <span className="rounded-full px-2 py-0.5 text-[#D1D5DB] border border-[#2D313B] items-center">
                 0
