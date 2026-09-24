@@ -1,9 +1,10 @@
 import logo from "@/assets/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 function Navbar() {
   return (
-    <div className="border-b border-[#222630] pt-2 mb-20">
+    <div className="border-b border-[#222630] pt-2 mb-20 sticky top-0 bg-black/90 z-1">
       <div className="container mx-auto navbar shadow-sm w-full">
         <div className="navbar-start">
           <div className="dropdown">
@@ -46,35 +47,41 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <div className="flex gap-2 text-2xl font-bold">
+          <Link href="/" className="flex gap-2 text-2xl font-bold">
             <Image src={logo} alt="fitlog logo" />
             FITLOG
-          </div>
+          </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li className="bg-[#1A2312] text-[#C2F800] rounded-4xl font-semibold">
-              <a>Workouts</a>
-            </li>
 
-            <li className="font-semibold">
-              <a>MyPlan</a>
-            </li>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1 flex gap-5">
+            <Link href="/workouts">
+              <li className="bg-[#1A2312] text-[#C2F800] rounded-4xl font-semibold p-2">
+                Workouts
+              </li>
+            </Link>
+            <Link href="/workouts">
+              <li className="font-semibold p-2">MyPlan</li>
+            </Link>
           </ul>
         </div>
         <div className="navbar-end flex gap-5">
-          <button className="text-[#D1D5DB]">
-            Plan{" "}
-            <span className="px-2 py-0.5 bg-[#C2F800] rounded-full text-black font-semibold">
-              0
-            </span>
-          </button>
-          <button className="text-[#9CA3AF]">
-            Saved{" "}
-            <span className="rounded-full px-2 py-0.5 text-[#D1D5DB] border border-[#2D313B]">
-              0
-            </span>
-          </button>
+          <Link href="#" className="cursor-pointer">
+            <button className="text-[#D1D5DB]">
+              Plan{" "}
+              <span className="px-2 py-0.5 bg-[#C2F800] rounded-full text-black font-semibold items-center">
+                0
+              </span>
+            </button>
+          </Link>
+          <Link href="#" className="cursor-pointer">
+            <button className="text-[#9CA3AF]">
+              Saved{" "}
+              <span className="rounded-full px-2 py-0.5 text-[#D1D5DB] border border-[#2D313B] items-center">
+                0
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Suspense } from "react";
 import WorkoutCard from "./WorkoutCard";
 
 const getWorkouts = async () => {
@@ -8,10 +10,9 @@ const getWorkouts = async () => {
 
 async function WorkoutList() {
   const workoutData = await getWorkouts();
-  console.log(workoutData);
 
   return (
-    <div>
+    <div id="workouts">
       <div className="container mx-auto">
         <div className="flex flex-col gap-2 mb-10">
           <h2 className="font-[oswald] text-4xl font-bold">THE LIBRARY</h2>
@@ -19,12 +20,14 @@ async function WorkoutList() {
             Twelve lifts covering every major muscle group.
           </p>
         </div>
-        <div>
-          {workoutData.map((workout) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full md:gap-5 pb-10">
+          {workoutData.map((workout, id) => {
             return (
-              <div key={workout.id}>
-                <WorkoutCard workout={workout} />
-              </div>
+              <Suspense key={id} fallback="Loading...">
+                <Link key={id} href={`/workouts/${workout.id}`}>
+                  <WorkoutCard key={workout.id} workout={workout} />
+                </Link>
+              </Suspense>
             );
           })}
         </div>

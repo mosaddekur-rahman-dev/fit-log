@@ -1,5 +1,6 @@
 import bannerImage from "@/assets/banner.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Banner() {
   return (
@@ -16,9 +17,11 @@ export function Banner() {
               <br />
               into today's plan, and watch the week's work add up.
             </p>
-            <button className="btn bg-[#C2F800] text-black w-50 font-[inter] font-bold">
-              BROWSE WORKOUTS
-            </button>
+            <Link href="/workouts">
+              <button className="btn bg-[#C2F800] text-black w-50 font-[inter] font-bold">
+                BROWSE WORKOUTS
+              </button>
+            </Link>
           </div>
           <div>
             <Image

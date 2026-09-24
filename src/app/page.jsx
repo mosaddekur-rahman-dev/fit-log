@@ -1,5 +1,5 @@
 import Banner from "@/components/homepage/banner/page";
-import WorkoutList from "@/components/homepage/workouts/page";
+import WorkoutList from "@/app/workouts/page";
 
 function page() {
   return (
