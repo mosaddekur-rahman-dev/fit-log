@@ -53,18 +53,28 @@ function Navbar() {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
+            <li className="bg-[#1A2312] text-[#C2F800] rounded-4xl font-semibold">
               <a>Workouts</a>
             </li>
 
-            <li>
+            <li className="font-semibold">
               <a>MyPlan</a>
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
-          <a className="btn">Button</a>
+        <div className="navbar-end flex gap-5">
+          <button className="text-[#D1D5DB]">
+            Plan{" "}
+            <span className="px-2 py-0.5 bg-[#C2F800] rounded-full text-black font-semibold">
+              0
+            </span>
+          </button>
+          <button className="text-[#9CA3AF]">
+            Saved{" "}
+            <span className="rounded-full px-2 py-0.5 text-[#D1D5DB] border border-[#2D313B]">
+              0
+            </span>
+          </button>
         </div>
       </div>
     </div>
