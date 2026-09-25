@@ -2,12 +2,14 @@
 import { WorkoutContext } from "@/Context/WorkoutContext";
 import { useContext } from "react";
 import { RiCalendarTodoFill } from "react-icons/ri";
+import { toast } from "react-toastify";
 
 function AddButton({ workout }) {
   const { addWorkout, setAddWorkout } = useContext(WorkoutContext);
 
   const handleAddButton = () => {
     setAddWorkout([...addWorkout, workout]);
+    toast.success(`${workout.name} has been Added to today's plan!`);
   };
 
   return (

@@ -1,8 +1,12 @@
+"use client";
 import logo from "@/assets/logo.png";
+import { WorkoutContext } from "@/Context/WorkoutContext";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
 
 function Navbar() {
+  const { addWorkout, savedWorkout } = useContext(WorkoutContext);
   return (
     <div className="border-b border-[#222630] pt-2 mb-20 sticky top-0 bg-black/90 z-1">
       <div className="container mx-auto navbar shadow-sm w-full">
@@ -25,27 +29,6 @@ function Navbar() {
                 />{" "}
               </svg>
             </div>
-            <ul
-              tabIndex={-1}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
-            </ul>
           </div>
           <Link href="/" className="flex gap-2 text-2xl font-bold">
             <Image src={logo} alt="fitlog logo" />
@@ -70,7 +53,7 @@ function Navbar() {
             <button className="text-[#D1D5DB] cursor-pointer">
               Plan{" "}
               <span className="px-2 py-0.5 bg-[#C2F800] rounded-full text-black font-semibold items-center">
-                0
+                {addWorkout.length}
               </span>
             </button>
           </Link>
@@ -78,7 +61,7 @@ function Navbar() {
             <button className="text-[#9CA3AF] cursor-pointer">
               Saved{" "}
               <span className="rounded-full px-2 py-0.5 text-[#D1D5DB] border border-[#2D313B] items-center">
-                0
+                {savedWorkout.length}
               </span>
             </button>
           </Link>
