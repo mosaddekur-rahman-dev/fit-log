@@ -43,7 +43,9 @@ function Navbar() {
               </Link>
             </ul>
           </div>
-          <Link href="/" className="hidden sm:flex gap-2 text-2xl font-bold">
+          <Link
+            href="/"
+            className="items-center justify-center flex gap-2 text-2xl font-bold">
             <Image src={logo} alt="fitlog logo" />
             FITLOG
           </Link>
@@ -61,7 +63,7 @@ function Navbar() {
             </Link>
           </ul>
         </div>
-        <div className="navbar-end flex gap-5">
+        <div className="navbar-end flex gap-1 sm:gap-5">
           <Link href="/myplans">
             <button className="text-[#D1D5DB] cursor-pointer">
               Plan{" "}
