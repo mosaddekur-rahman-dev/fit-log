@@ -7,7 +7,13 @@ import { toast } from "react-toastify";
 function SaveButton({ workout }) {
   const { savedWorkout, setSavedWorkout } = useContext(WorkoutContext);
 
+  const isSaved = savedWorkout.some((item) => item.id === workout.id);
+
   const handleSaveButton = () => {
+    if (isSaved) {
+      toast.warning("Already added to Saved!");
+      return;
+    }
     setSavedWorkout([...savedWorkout, workout]);
     toast.info(`${workout.name} has been added to saved list!`);
   };

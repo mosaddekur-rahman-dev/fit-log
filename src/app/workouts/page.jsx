@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import WorkoutCard from "./WorkoutCard";
 
 const getWorkouts = async () => {
@@ -23,11 +22,9 @@ async function WorkoutList() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full md:gap-5 pb-10">
           {workoutData.map((workout, id) => {
             return (
-              <Suspense key={id} fallback="Loading...">
-                <Link key={id} href={`/workouts/${workout.id}`}>
-                  <WorkoutCard key={workout.id} workout={workout} />
-                </Link>
-              </Suspense>
+              <Link key={id} href={`/workouts/${workout.id}`}>
+                <WorkoutCard key={workout.id} workout={workout} />
+              </Link>
             );
           })}
         </div>

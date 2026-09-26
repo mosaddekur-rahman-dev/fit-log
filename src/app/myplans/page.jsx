@@ -7,7 +7,7 @@ import WorkoutSaveCard from "./WorkoutSaveCard";
 
 function MyPlan() {
   const { addWorkout, savedWorkout } = useContext(WorkoutContext);
-  const [sortBy, setSortBy] = useState("rating");
+  const [sortBy, setSortBy] = useState("duration");
   const [activeTab, setActiveTab] = useState("today");
 
   const sortWorkouts = (workouts) => {
@@ -69,9 +69,7 @@ function MyPlan() {
         <select
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value)}
-          defaultValue="Select"
           className="select select-neutral mb-5">
-          <option disabled={true}>Select</option>
           <option value={"duration"}>Duration</option>
           <option value={"calories"}>Calories</option>
           <option value={"rating"}>Rating</option>

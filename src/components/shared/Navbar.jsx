@@ -29,6 +29,19 @@ function Navbar() {
                 />{" "}
               </svg>
             </div>
+            <ul
+              tabIndex={-1}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              <Link href="/">
+                <li className="font-semibold p-2">Home</li>
+              </Link>
+              <Link href="/workouts">
+                <li className="rounded-4xl font-semibold p-2">Workouts</li>
+              </Link>
+              <Link href="/myplans">
+                <li className="font-semibold p-2">MyPlan</li>
+              </Link>
+            </ul>
           </div>
           <Link href="/" className="flex gap-2 text-2xl font-bold">
             <Image src={logo} alt="fitlog logo" />

@@ -6,17 +6,20 @@ import { useContext } from "react";
 import { FiClock } from "react-icons/fi";
 import { HiOutlineStar } from "react-icons/hi";
 import { PiFireSimple } from "react-icons/pi";
+import { toast } from "react-toastify";
 
 function WorkoutSaveCard({ workout }) {
   const { savedWorkout, setSavedWorkout, addWorkout, setAddWorkout } =
     useContext(WorkoutContext);
 
-  const handleMarkButton = () => {
-    const activeList = addWorkout.filter(
-      (workout) => workout.id !== workout.id,
+  const handleRemoveButton = () => {
+    const updateWorkouts = savedWorkout.filter(
+      (saved) => saved.id !== workout.id,
     );
-    setAddWorkout(activeList);
+    setSavedWorkout(updateWorkouts);
+    toast.success("Succesfully removed item!");
   };
+
   return (
     <div className="card card-side bg-base-100 shadow-sm mb-20">
       <figure>
@@ -49,25 +52,20 @@ function WorkoutSaveCard({ workout }) {
               </div>
             </div>
           </div>
-          {savedWorkout.includes(workout) ? (
-            <div className="flex gap-2">
-              <Link href={`/workouts/${workout.id}`}>
-                <button className="btn bg-[#14171E] rounded-3xl">
-                  View Details
-                </button>
-              </Link>
-              <button className="cursor-pointer text-[#6B7280]">X</button>
-            </div>
-          ) : (
-            <div className="flex gap-2">
-              <Link href={`/workouts/${workout.id}`}>
-                <button className="btn bg-[#14171E] rounded-3xl">
-                  View Details
-                </button>
-              </Link>
-              <button className="cursor-pointer text-[#6B7280]">X</button>
-            </div>
-          )}
+          <div className="flex gap-2">
+            <Link href={`/workouts/${workout.id}`}>
+              <button className="btn bg-[#14171E] rounded-3xl">
+                {" "}
+                View Details
+              </button>
+            </Link>
+            <button
+              className="cursor-pointer text-[#6B7280]"
+              onClick={handleRemoveButton}>
+              {" "}
+              X
+            </button>
+          </div>
         </div>
       </div>
     </div>

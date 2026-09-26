@@ -7,18 +7,22 @@ import { FiClock } from "react-icons/fi";
 import { GoCheck } from "react-icons/go";
 import { HiOutlineStar } from "react-icons/hi";
 import { PiFireSimple } from "react-icons/pi";
+import { toast } from "react-toastify";
 
 function WorkoutListCard({ workout }) {
   const { savedWorkout, setSavedWorkout, addWorkout, setAddWorkout } =
     useContext(WorkoutContext);
 
-  const handleMarkButton = () => {
-    // const activeList = addWorkout.filter((active) => active.id !== workout.id);
-    // setAddWorkout(activeList);
+  const handleRemoveButton = () => {
+    const updateWorkouts = addWorkout.filter(
+      (active) => active.id !== workout.id,
+    );
+    setAddWorkout(updateWorkouts);
+    toast.success("Succesfully removed item!");
   };
   return (
-    <div className="card card-side bg-base-100 shadow-sm mb-20">
-      <figure>
+    <div className="card card-side bg-base-100 shadow-sm mb-20  lg:w-full">
+      <figure className="w-15 lg:w-50">
         <Image
           src={workout.image}
           alt={workout.name}
@@ -66,10 +70,14 @@ function WorkoutListCard({ workout }) {
               </Link>
               <button
                 className="btn bg-[#CCFF00] rounded-3xl text-black font-semibold"
-                onClick={() => handleMarkButton()}>
+                onClick={() => handleRemoveButton()}>
                 <GoCheck className="font-bold" /> Mark As Done
               </button>
-              <button className="cursor-pointer text-[#6B7280]">X</button>
+              <button
+                className="cursor-pointer text-[#6B7280]"
+                onClick={() => handleRemoveButton()}>
+                X
+              </button>
             </div>
           )}
         </div>

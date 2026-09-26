@@ -19,7 +19,7 @@ async function WorkoutDetailsPage({ params }) {
   console.log(workout);
   return (
     <div className="container mx-auto mb-20 p-5">
-      <div className="card grid grid-cols-2 gap-5  shadow-sm">
+      <div className="card grid grid-cols-1 lg:grid-cols-2 gap-5  shadow-sm">
         <div>
           <figure className="rounded-3xl">
             <Image
