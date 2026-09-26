@@ -43,7 +43,7 @@ function Navbar() {
               </Link>
             </ul>
           </div>
-          <Link href="/" className="flex gap-2 text-2xl font-bold">
+          <Link href="/" className="hidden sm:flex gap-2 text-2xl font-bold">
             <Image src={logo} alt="fitlog logo" />
             FITLOG
           </Link>

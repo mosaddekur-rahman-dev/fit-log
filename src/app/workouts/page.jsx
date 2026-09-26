@@ -2,7 +2,7 @@ import Link from "next/link";
 import WorkoutCard from "./WorkoutCard";
 
 const getWorkouts = async () => {
-  const response = await fetch("https://api.abcz.workers.dev/api/fitlog");
+  const response = await fetch("https://api.api-store.workers.dev/api/fitlog");
   const data = response.json();
   return data;
 };

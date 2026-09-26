@@ -1,11 +1,9 @@
-import Image from "next/image";
-import { RiCalendarTodoFill } from "react-icons/ri";
-import { MdOutlineSaveAlt } from "react-icons/md";
 import AddButton from "@/components/workoutButtons/AddButton";
 import SaveButton from "@/components/workoutButtons/SaveButton";
+import Image from "next/image";
 
 const getWorkouts = async () => {
-  const response = await fetch("https://api.abcz.workers.dev/api/fitlog");
+  const response = await fetch("https://api.api-store.workers.dev/api/fitlog");
   const data = response.json();
   return data;
 };
