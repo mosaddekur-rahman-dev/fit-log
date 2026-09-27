@@ -44,20 +44,20 @@ function MyPlan() {
         <h1 className="font-[oswald] text-3xl font-bold">MY PLAN</h1>
         <p>Cap of five lifts for today. Finish them, then load more.</p>
       </div>
-      <div className="grid grid-cols-3 justify-between bg-[#13161D] rounded-2xl h-40 px-4 py-4 mb-10">
-        <div className="h-30 border-r">
+      <div className="grid grid-cols-1 md:grid-cols-3 md:justify-between bg-[#13161D] rounded-2xl md:h-40 px-4 py-4 mb-10">
+        <div className="h-25 md:border-r">
           <p className="font-[inter] text-[#C2F10D]">Exercise</p>
           <h1 className="text-5xl font-bold font-[oswald] text-[#C2F10D] mt-5">
             {totalExercises}
           </h1>
         </div>
-        <div className=" h-30 border-r pl-5">
+        <div className=" h-25 md:border-r md:pl-5">
           <p className="font-[inter]">Minutes</p>
           <h1 className="text-5xl font-bold font-[oswald] mt-5">
             {totalMinutes}
           </h1>
         </div>
-        <div className=" h-30 pl-5 ">
+        <div className=" h-25 md:pl-5 ">
           <p className="font-[inter] ">Calories</p>
           <h1 className="text-5xl font-bold font-[oswald] mt-5">
             {totalCalories}
