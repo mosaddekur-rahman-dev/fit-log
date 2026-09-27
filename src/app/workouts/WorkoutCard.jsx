@@ -10,7 +10,7 @@ function WorkoutCard({ workout }) {
         <Image
           src={workout.image}
           alt={workout.name}
-          width={500}
+          width={700}
           height={300}
         />
       </figure>

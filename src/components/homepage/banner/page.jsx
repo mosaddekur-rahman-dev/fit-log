@@ -26,7 +26,7 @@ export function Banner() {
             <Image
               src={bannerImage}
               alt="Banner Image"
-              className="hidden lg:block lg:w-100 lg:h-100"
+              className="w-70 lg:block lg:w-100 lg:h-100"
             />
           </div>
         </div>

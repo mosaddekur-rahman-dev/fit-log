@@ -81,7 +81,7 @@ async function WorkoutDetailsPage({ params }) {
               <p>4. {workout.instructions[3]}</p>
             </div>
           </div>
-          <div className="flex justify-start gap-2">
+          <div className="grid grid-cols-1 w-full gap-2 md:flex md:gap-2">
             <AddButton workout={workout} />
             <SaveButton workout={workout} />
           </div>

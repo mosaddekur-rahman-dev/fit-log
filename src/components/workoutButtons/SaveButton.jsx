@@ -18,9 +18,11 @@ function SaveButton({ workout }) {
     toast.info(`${workout.name} has been added to saved list!`);
   };
   return (
-    <button className="btn rounded-2xl" onClick={() => handleSaveButton()}>
-      <MdOutlineSaveAlt /> Save for later
-    </button>
+    <div className="card-actions justify-start">
+      <button className="btn rounded-2xl" onClick={() => handleSaveButton()}>
+        <MdOutlineSaveAlt /> Save for later
+      </button>
+    </div>
   );
 }
 
